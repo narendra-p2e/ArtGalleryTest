@@ -270,8 +270,6 @@
 
     <div id="unity-footer">
         <div id="unity-fullscreen-button"></div>
-		<button id="entervr" value="Enter VR" disabled>VR</button>
-        <button id="enterar" value="Enter AR" disabled>AR</button>
     </div>
     
 
@@ -375,23 +373,6 @@
             };
 
       document.body.appendChild(script);
-
-	  let enterARButton = document.getElementById('enterar');
-      let enterVRButton = document.getElementById('entervr');
-
-      document.addEventListener('onARSupportedCheck', function (event) {
-        enterARButton.disabled = !event.detail.supported;
-      });
-      document.addEventListener('onVRSupportedCheck', function (event) {
-        enterVRButton.disabled = !event.detail.supported;
-      });
-
-      enterARButton.addEventListener('click', function (event) {
-        unityGameInstance.Module.WebXR.toggleAR();
-      });
-      enterVRButton.addEventListener('click', function (event) {
-        unityGameInstance.Module.WebXR.toggleVR();
-      });
 
     </script>
 
