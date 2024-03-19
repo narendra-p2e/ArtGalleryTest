@@ -112,6 +112,16 @@
 				case YT.PlayerState.ENDED: player.playVideo(); break;
 			}
 		}
+
+		function pauseYoutubeVideo(iframeId) {
+            var player = document.getElementById(iframeId).player;
+            if (!player || !player.getPlayerState) {
+                console.log("WARNING: player not ready! iframe id = " + iframeId);
+                return;
+			}
+
+			console.error("Working" + player.getPlayerState());
+        }
     </script>
 
 	<!-- Import maps polyfill -->
